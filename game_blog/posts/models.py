@@ -1,10 +1,9 @@
 from datetime import datetime
 
-from django.forms import IntegerField
-from pygments.lexer import default
+
 from sqlalchemy import Boolean, Column, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
-from sqlalchemy_utils import EmailType, UUIDType
+from sqlalchemy_utils import UUIDType
 
 from ..database import Base
 

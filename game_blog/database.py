@@ -8,10 +8,7 @@ cre_string = ('postgresql+psycopg2://' + DB_SETTINGS['ADMIN'] + ':' + DB_SETTING
               + ':' + DB_SETTINGS['PORT'] + '/' + DB_SETTINGS['DB_NAME'])
 
 engine = create_engine(
-    cre_string,
-    # connect_args={
-    #     "check_same_thread": False
-    # }
+    cre_string
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
