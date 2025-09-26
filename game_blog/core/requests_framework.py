@@ -1,5 +1,7 @@
 import json
 
+from apps.accountsapp.utils import get_current_user
+
 class PostRequest:
 
     @staticmethod
@@ -8,3 +10,16 @@ class PostRequest:
         data = json.loads(data)
 
         return data
+
+
+async def setup_user_dict(request, db):
+    token = request.cookies.get('token')
+    response_dict = {
+        'request': request
+    }
+
+    if token:
+        user = await get_current_user(db, token)
+        response_dict['user'] = user
+
+    return response_dict
