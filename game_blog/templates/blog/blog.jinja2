@@ -42,7 +42,7 @@
                         {% for post in posts %}
                             <div class="post-item">
                                 <div class="post-img"><img
-                                        src="{{ url_for('media', path=post.image) }}" alt="">
+                                        src="{{ url_for('media', path=post['image']) }}" alt="">
                                 </div>
                                 <div class="post-main-info">
                                     <p class="post-title">{{ post.title }}</p>
